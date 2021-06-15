@@ -9,6 +9,7 @@ from discord.ext import commands
 from discord.ext.commands import cooldown, BucketType, CommandOnCooldown
 from datetime import datetime
 from random import randint
+import string
 
 
 def read_token():
