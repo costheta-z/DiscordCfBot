@@ -11,6 +11,12 @@ from datetime import datetime
 from random import randint
 import string
 
+class challengeProblem:
+    difficulty = 0
+
+    def __init__(self, problemStatement):
+        self.problemStatement = problemStatement
+
 
 def read_token():
     with open("./parent/bot/token.txt","r") as f:
@@ -298,11 +304,15 @@ async def on_message(message):
                     mult = {}
 
                     fdata = []
+                    problemSet=[]
 
                     for x in data:
                         if 'rating' not in x:
                             continue
                         if x['rating'] <= 2000:
+                            tempObj=challengeProblem(fdata)
+                            tempObj.difficulty=x['rating']
+                            problemSet.append(tempObj)
                             fdata.append(x)
 
                     while True:
