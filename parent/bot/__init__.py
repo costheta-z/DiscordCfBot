@@ -289,7 +289,7 @@ async def on_message(message):
                         'games', 'matrices', 'flows', 'string-suffix-structures', 'expression-parsing', 
                         'graph-matchings']
 
-                    pick = tags[0]
+                    pick = random.choice(tags)
                     print(pick)
 
                     link = "https://codeforces.com/api/problemset.problems?tags="
